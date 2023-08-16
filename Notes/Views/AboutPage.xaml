@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="Notes.Views.AboutPage"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:models="clr-namespace:Notes.Models"
+    Title="AboutPage">
+    <ContentPage.BindingContext>
+        <models:About />
+    </ContentPage.BindingContext>
+    <VerticalStackLayout Margin="10" Spacing="10">
+        <HorizontalStackLayout>
+            <Image
+                HeightRequest="64"
+                SemanticProperties.Description="The dot net bot waving hello!"
+                Source="dotnet_bot.png" />
+            <Label
+                FontAttributes="Bold"
+                FontSize="22"
+                Text="{Binding Title}"
+                VerticalOptions="End" />
+            <Label
+                FontSize="22"
+                Text="{Binding Version}"
+                VerticalOptions="End" />
+        </HorizontalStackLayout>
+        <Label Text="{Binding Message}" />
+        <Button Clicked="LearnMore_Clicked" Text="Learn more..." />
+    </VerticalStackLayout>
+</ContentPage>
